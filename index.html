@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+   	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Source+Sans+Pro&family=Space+Mono&display=swap"
+	 rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--import syntax-highlighting library-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" rel="stylesheet">
+	<title>How to C.</title>
+	
+	 <!--Generals styles-->
+    <style>
+ 
+
+ 
+
+strong {
+  text-decoration: none;
+  color: inherit;
+}
+
+strong{
+  display: inline-block;
+  padding-bottom: 0.25rem; /* defines the space between text and underline */
+  position: relative;
+  
+}
+
+strong::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(227, 122, 9);
+  transition: width 0.5s ease-out;
+ }
+strong:hover::before {
+  width: 100%;
+}
+strong:hover{
+      color:rgb(158, 88, 8);
+
+}
+    </style>
+    
+      <!--Navbar-->
+ <style>
+     *{
+        padding:0;
+        margin:0;
+        box-sizing:border-box;
+ font-family: 'Open Sans';
+
+        
+     }
+     :root{
+         --clr:rgb(255, 255, 255);
+         
+     }
+     body{
+         display:flex;
+         justify-content:center;
+         align-items:center;
+         min-height:100vh;
+         background:var(--clr);
+     }
+     nav{
+         width:25rem;
+         height:4.375rem;
+         background:rgb(51, 245, 255);
+         position:absolute;/*This right here will end up me costing a ton of time and didn't realize it untill it was to late*/
+         top:13%;
+         display:flex;
+         justify-content:center;
+         align-items:center;
+         border-radius:1rem;
+      }
+     nav ul{
+            display:flex;
+       width:-5rem;
+      
+     }
+     nav ul li{
+          list-style:none;
+        position:relative;
+        width:63px;
+        height:26px;
+        z-index:1;
+        
+
+         
+     }
+       nav ul li span{
+           transition:0.5s;
+       }
+      nav ul li.active{
+          transition:0.5s;
+          transform:translateY(-52px);
+      }
+      .ind{
+          position:absolute;
+          width:70px;
+          height:78px;
+          left:5%;
+          top:-75%;
+          background:rgb(135, 230, 150);
+          border-radius:50%;
+          border:6px solid var(--clr);
+          transition:0.5s;
+      }
+       nav ul li:nth-child(1).active ~ .ind{
+           transform:translateX(calc(63px *0));
+       }
+        nav ul li:nth-child(2).active ~ .ind{
+           transform:translateX(calc(63px *1));
+       }
+         nav ul li:nth-child(3).active ~ .ind{
+           transform:translateX(calc(63px *2));
+       }
+         nav ul li:nth-child(4).active ~ .ind{
+           transform:translateX(calc(63px *3));
+       }
+         nav ul li:nth-child(5).active ~ .ind{
+           transform:translateX(calc(63px *4));
+       }
+   
+ </style>
+ <!--Page1-->
+ <style>
+ 
+     .text{
+         color:darkslategray;
+         font-size:2.25rem;
+         position:absolute;
+         left:21%;
+         top:33%;
+     }
+     .img{
+         height:19%;
+        position:absolute;
+          left:18%;
+         top:46%;
+
+     }
+     .text1{
+         position:absolute;
+         left:32%;
+     }
+     .never{
+           color:darkslategray;
+         font-size:2.25rem;
+         position:absolute;
+         left:11%;
+         top:122%;
+     }
+     .text4{
+           position:absolute;
+         left:11%;
+         top:139%;
+      }
+      .img1{
+           height:32%;
+        position:absolute;
+          left:12%;
+         top:77%;
+          
+      }
+      	a {
+			text-decoration: none;
+			color: rgb(187, 0, 255);
+			border-bottom: 1px solid;
+		}
+		.page1{
+		    display:block;
+		}
+	 
+		 
+ </style>
+ <!--Page2-->
+ <style>
+    .texty{
+           color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+         position:absolute;
+         top:31%;
+         left:20%;
+    }
+    .text5{
+        position:absolute;
+        top:269%;
+        left:28%;
+    }
+     .text12{
+                  position:absolute;
+
+          left:28%;
+         top:45%;
+         background:white;
+         width:65%;
+      }
+      .text22{
+            position:absolute;
+
+          left:28%;
+         top:140%;
+      }
+     .codey{
+         position:absolute;
+         width:486px;
+         left:12%;
+         top:58%;
+      }
+      .texty2{
+           color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+         position:absolute;
+         top:123%;
+         left:19%;
+      }
+      .texty3{
+              color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+         position:absolute;
+         top:171%;
+         left:19%;
+      }
+      .text32{
+            position:absolute;
+
+          left:28%;
+         top:192%; 
+      }
+      
+      .texty4{
+          position:absolute;
+                   color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+         position:absolute;
+         top:231%;
+         left:19%;
+      }
+       .texty5{
+          position:absolute;
+                   color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+          top:264%;
+         left:19%;
+      }
+      .text42{
+          position:absolute;
+          top:245%;
+          left:28%;
+      }
+      .text52{
+          position:absolute;
+          top:296%;
+          left:28%; 
+      }
+      .texty6{
+                             color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+          position:absolute;
+          top:305%;
+          left:19%;  
+      }
+      .text62{
+             position:absolute;
+          top:322%;
+          left:28%; 
+      }
+       .page2{
+          display:none;
+      }
+     
+ </style>
+ <!--Page3-->
+ <style>
+      .text3{
+            color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+background:white;     
+position:absolute;
+         top:31%;
+         left:20%;
+     }
+     .text13{
+   position:absolute;
+
+          left:28%;
+         top:45%;
+         background:white;
+         width:65%;
+         font-size:1rem;
+         background:white;
+         padding:10px;
+     }
+     .codey3{
+         position:absolute;
+         top:61%;
+         left:24%;
+          width:56%;
+     }
+     .texty31{
+    color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+         position:absolute;
+         top:199%;
+         left:20%;         
+     }
+     .text31{
+             position:absolute;
+         top:220%;
+         left:24%;
+     }
+     .texty32{
+          color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+            position:absolute;
+         top:248%;
+         left:20%;
+     }
+     .text33{
+           position:absolute;
+         top:268%;
+         left:24%;
+     }
+     .texty33{
+               color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+            position:absolute;
+         top:290%;
+         left:20%;
+     }
+     .text43{
+           position:absolute;
+         top:307%;
+         left:24%;
+     }
+     .page3{
+         display:none;
+     }
+ </style>
+ <!--Page4-->
+ <style>
+     .texty44{
+              color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+background:white;     
+position:absolute;
+         top:31%;
+         left:20%;
+     }
+     .text41{
+          position:absolute;
+         top:46%;
+         background:white;
+         left:20%;
+         
+     }
+     .text34{
+             position:absolute;
+         top:166%;
+         background:white;
+         left:20%;
+     }
+     .texty45{
+              color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+background:white;     
+position:absolute;
+         top:145%;
+         left:20%;
+     }
+     .texty46{
+             color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+background:white;     
+position:absolute;
+         top:196%;
+         left:20%;
+     }
+     .text46{
+             position:absolute;
+         top:213%;
+         background:white;
+         left:20%;
+     }
+     .page4{
+         display:none;
+     }
+     
+ </style>
+ <style>
+     .texty55{
+                       color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+background:white;     
+position:absolute;
+         top:31%;
+         left:20%;
+     }
+     .text52{
+         position:absolute;
+         top:47%;
+     }
+     .codey4{
+         position:absolute;
+         left:10%;
+         
+        
+       }
+       .texty551{
+                                  color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+background:white;     
+position:absolute;
+         top:143%;
+         left:20%;
+           
+       }
+       .text511{
+           position:absolute;
+           left:10%;
+           top:162%;
+       }
+       .close{
+              color:darkslategray;
+         font-size:2.25rem;
+         padding-top:10px;
+background:white;     
+position:absolute;
+         top:183%;
+         left:20%;
+       }
+       .closeText{
+            position:absolute;
+           left:10%;
+           top:203%;
+       }
+       .page5{
+           
+           display:none;
+       }
+     
+ </style>
+ 
+ <!--Code styles-->
+ 	<style>
+		pre,
+		code {
+			font-family: , monospace;
+			background-color: hsl(320, 74%, 97%) !important;
+		}
+
+		pre {
+			margin: 2.5rem 0;
+			padding: 5px 5px !important;
+			white-space: pre;
+		}
+		
+
+		pre.output,
+		code.output {
+			background: hsl(220, 20%, 97%) !important;
+		}
+	</style>
+        </head>
+     
+     
+          
+  <body> 
+    <nav>
+           <ul>
+              <li class="list active 1 "> 
+          <span class="material-icons  ">home</span>
+               </li>
+                            <li class="list 2  ">
+                            <span class="material-icons">flight_takeoff</span>
+                                
+                            </li>
+
+              <li class="list 3"><span class="material-icons">
+build</span>
+</li>
+
+              <li class="list 4">
+              <span class="material-icons">construction</span>
+             </li>
+             <li class="list 5">
+             <span class="material-icons ">
+apartment
+</span>
+
+             </li>
+          <div class="ind"></div>
+
+          </ul>
+       </nav>
+       <!--Page1-->
+  <div class="page1">
+     <p class="text">
+C. What? Why?     </p>
+     
+     
+     <p class="text1">
+     C is a <strong>general-purpose computer programming language</strong>. C is a <strong>lower-level</strong> language which means that it allows you to mess with the <strong>hardware </strong>, but needs a <strong>compiler</strong> and is harder to shoot you foot off. Learning C is important because most languages are based on it and C is very powerful.
+     <br>
+     <br>
+     C isn't that beginner friendly and has no <strong>garbage collector</strong>, so you must mange your own<strong> memory</strong>. If that sounded weird, don't worry about it. I will explain in more in depth latter
+    </p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/The_C_Programming_Language%2C_First_Edition_Cover.svg/1200px-The_C_Programming_Language%2C_First_Edition_Cover.svg.png" alt="C book" class="img1">
+    
+     <p class="never">
+How will you teach me?     </p>
+<p class="text4">
+This is split into 4 sections Liftoff, Repair, New Tools, and Final project. To follow along open up an <strong>IDE</strong> (And install the C <strong>compiler</strong>) or go to an online <strong>compiler</strong> like <a href="https://www.programiz.com/c-programming/online-compiler/">this</a> one. All lessons are written by me and I try to explain everything as good as I can.
+</p>
+
+    
+    
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/1200px-C_Programming_Language.svg.png" alt="C_logo" class="img"> 
+  </div>
+  <!--Page2-->
+  <div class="page2">
+  <p class="texty">  Hello World!</p>
+  <p class="text12">The following code snippet prints out "Hello World" and introduces you to data types</p>
+  
+  
+  <pre><div class="codey"><code>
+  #include &ltstdio.h&gt
+char hello[]="hello";
+int number=3;
+float pi=3.1415;
+double pi_better=3.1415926535;
+
+int main(void) {
+printf("%s\n", hello);
+  return 0;
+} </code></div>
+</pre>
+<p class="texty2"> Unpacking</p>
+    <p class="text22"> Where to begin? The first line, <code>#include &ltstdio.h&gt</code>, includes/imports a <strong>library</strong> which is a collection of pre-defined <strong>functions</strong>. This specific libraries, stdio, stands for <strong>Standard Input Output</strong> and allows you to use output and input vaules using the console   </p>
+    <p class="texty3">Chars</p>
+    <p class="text32">On the second line we use the <strong>keyword</strong> Char. What does this mean? Well you probably guessed it. It stands for character. But what we do after the<strong> keywords</strong> matters alot. Because C has no string type, we must create an <strong>array</strong> of Chars and assign a Char to each index. We could do this with <strong>pointers</strong>, but we will get to that latter. </p>
+    
+    <p class="texty4">Int</p>
+    
+    <p class="text42">On the third line we declare a Int <strong>data-type</strong>. This allows us to use an integers as a <strong>variable</strong>. Why can't we just put var in front of everything? C is strongly typed which means we must annotate types.</p>
+    
+    <p class="texty5">Float vs Double </p>
+    <p class="text5">I know your probably looking at this and thinking, what the big deal between <strong>float</strong> and <strong>double</strong>? A floating point and a double are decimal point numbers. But, Floats only have 7 digits of precision while doubles have 15.</p>
+    <p class="texty6">Everything Else</p>
+    <p class="text62">After all the <strong>data types</strong>, we see a <strong>function</strong>. This function is different from normal functions. It is the main function. Your code starts executing in the main function instead of the <strong> global spoce</strong>. The <strong>void</strong> means it shouldn't take any input. The <code>return 0;</code> means everything worked. If it is 1 then it is bad.  </p>
+    
+    
+</div>
+<!--Page3-->
+  <div class="page3">
+      <p class="text3">Loopy Functions</p>
+      <p class="text13">This code snippet will show you <strong>functions</strong> and <strong>loops</strong></p>
+        <pre><div class="codey3"><code>
+      #include &ltstdio.h&gt
+int max(int num1, int num2) {
+   int result;
+      if (num1 &lt num2){
+           result = num1;
+         }
+    else{
+      result = num2;
+      }
+  return result; 
+}
+ 
+int main(void) {
+   int i;
+ for(  i=1; i&gt5; i++){
+  printf("This loops has run %d times\n", i);
+}
+  printf("%d",  max(2,8));
+  
+  return 0;
+ }</code></div>
+</pre>'
+<p class="texty31">Functions</p>
+<p class="text31">
+    A <strong>function</strong> is defined with the <strong>return type</strong>, then there is the name, and then the <strong>parameters</strong> and the <strong>block</strong> of code. The syntax is  <strong>parameters</strong> between braces and the block of code between curly braces. <code>type name(parameter){
+    block of code
+        }
+    </code>
+     
+</p>
+<p class="texty32">
+If/Else
+</p>
+<p class="text33">Inside the max <strong>function</strong>, we use a <strong>if/else</strong>condition. The if and else syntax in C is the same in Javascript. There is also <code>else if</code> condition which is also the same as Javascript.</p>
+<p class="texty33">
+For loops
+</p>
+<p class="text43">A <strong>For</strong> loop is slightly different in C then in JS. To start a <strong>For loop</strong> we first must initialize are <strong>indexs</strong>. Unlike in JS, we do not initialize a index on the same line. The only other thing that should jump out to you is the %d and /n in the print statement. The %d tells the computer to throw in the i where the %d is. The /n means <code>new line</code>. </p>
+
+   </div>
+<!--page4-->
+<div class="page4">
+    <p class="texty44">Pointy Stars</p>
+    <p class="text41">This code snippet will introduce you to <strong>comments</strong> and <strong>memory</strong></p>
+    <pre><code class="codey">#include &ltstdio.h&gt
+int pointy=1;
+
+int main(void) {
+  printf("Vaule is stored at %p", &pointy); 
+char *str=malloc(4);
+  str[0]="H";
+      str[1]='E';
+  str[2]="Y";
+  str[3]="O";
+  /* We are done with the pointer*/
+  free(str);
+   return 0;
+}</code></pre>
+<p class="texty45">Pointers</p>
+<p class="text34">A <strong>pointer</strong> is a <strong> variable</strong> that stores the <strong> memory address</strong> of another <strong>variable</strong> as its value. A pointer variable points to a <strong> data type</strong> (like int ) of the same type, and is created with the<strong> * operator.</strong></p>
+<p class="texty46">Unpacking the rest</p>
+<p class="text46">Now that we know about <strong>pointers</strong> we can begin to explain what's happening here. The pointy variable stores an <strong>integer </strong>. But, we want to know where it is stored on the <strong>hardware</strong>. So we know we want to use <strong>pointers</strong> in some way, but how? If we print &pointy it will use the <strong>pointer</strong> and print the adress. Now we are ready for the rest. On line 4 we allow 4 bits of <strong>memory</strong> using  <strong>malloc</strong>. And assign each bit to a char. After we use the string we have to free it because as I said we must manage are own <strong>memory </strong>.    </p>
+</div>
+<div class="page5">
+    <p class="texty55">
+Structs
+    </p>
+    <p class="text52">C has no <strong>OOP</strong>, but we have <strong>structs</strong></p>
+ 
+  <pre><div class="codey"><code>
+struct address
+{
+   char name[50];
+   char street[100];
+   char city[50];
+   char state[20];
+ };
+int main(void) {
+     struct address  home= {"chicken", "Frogs", "SubToMeUtopia", "Chickenvile"};
+   printf ("you live in %s", home.state);
+   return 0;
+} </code></div></pre>
+<p class="texty551">Structs Explained</p>
+<p class="text511">To make a <strong>structs</strong> we use the keyword <strong>structs</strong> add a name after and put any values in the braces and add <strong>   data types</strong>. To get the values we use <strong>dot notation</strong>. </p>
+<p class="close">Closing thoughts</p>
+<p class="closeText">This page was heavly inspired by <a href="https://www.khanacademy.org/computer-programming/a-beginners-guide-to-c/6272575295504384">this masterclass of a program</a>. This was meant to in introduce you to C not give you everything. If you have questions I will answer all in the Questions tab.</p>
+</div>
+
+       <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+       <!--Import Syntax highlighter-->
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+ 
+    <!--actually highlight syntax-->
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+     <!--Don't look in here, messy code ahead. This is the JS that makes the navbar good-->
+    
+   <script>
+   
+   //Should of tried a for loop for this, but i am lazy
+   
+   //home icon
+       $(".1").on('click', function(){
+        $(".1").addClass("active")
+        $(".2").removeClass("active")
+                $(".3").removeClass("active")
+
+        $(".4").removeClass("active")
+ 
+
+        $(".5").removeClass("active")
+
+      })
+   // First icon
+$(".2").on('click', function(){
+                $(".1").removeClass("active")
+
+        $(".2").addClass("active")
+                $(".3").removeClass("active")
+
+        $(".4").removeClass("active")
+
+        $(".5").removeClass("active")
+ 
+      })
+
+   // second icon
+
+$(".3").on('click', function(){
+                $(".1").removeClass("active")
+
+        $(".2").removeClass("active")
+                $(".3").addClass("active")
+
+        $(".4").removeClass("active")
+
+        $(".5").removeClass("active")
+
+      })
+      // Third icon
+$(".4").on('click', function(){
+                        $(".1").removeClass("active")
+
+        $(".2").removeClass("active")
+                $(".3").removeClass("active")
+
+        $(".4").addClass("active")
+
+        $(".5").removeClass("active") 
+   
+      })
+      // final icon
+      $(".5").on('click', function(){
+                        $(".1").removeClass("active")
+
+        $(".2").removeClass("active")
+                $(".3").removeClass("active")
+
+        $(".4").removeClass("active")
+
+        $(".5").addClass("active")
+
+      })
+  </script>
+  <!--More Jquey-->
+  <script>
+      $(".1").on("click", function(){
+         $(".page1").css("display","block")
+         $(".page2").css("display","none")
+                                    $(".page3").css("display","none")
+
+                    $(".page4").css("display","none")
+             $(".page5").css("display", "none")
+       })
+        $(".2").on("click", function(){
+       $(".page1").css("display","none")
+         $(".page2").css("display","block")
+                           $(".page3").css("display","none") 
+                                               $(".page4").css("display","none")
+   $(".page5").css("display", "none")
+
+          
+       })
+         $(".3").on("click", function(){
+             
+          $(".page1").css("display","none")
+         $(".page2").css("display","none")
+                  $(".page3").css("display","block")
+                  
+                                    $(".page4").css("display","none")
+                                    $(".page5").css("display", "none")
+
+
+$(".5").on("click", function(){
+       $(".page5").css("display", "block")
+$(".page1").css("display","none")
+         $(".page2").css("display","none")
+                  $(".page3").css("display","none")
+                  $(".page4").css("display","none")
+})
+          
+       })
+         $(".4").on("click", function(){  $(".page1").css("display","none")
+         $(".page2").css("display","none")
+                  $(".page3").css("display","none")
+                  $(".page4").css("display","block")
+                     $(".page5").css("display", "none")
+})
+  </script>
+  <!--Some cool stuff?-->
+  <script></script>
+ 
+    </body>
+</html>
